@@ -1,0 +1,135 @@
+
+.footer {
+    background-color: $dark;
+    padding: 40px 77px 40px 78px;
+    display: grid;
+    color: #FFFFFF;
+    justify-items: center;
+
+
+    &__logo {
+        path {
+             fill: #FFFFFF;
+        }
+    }
+
+    &__socials {
+        margin-top: 32px;
+        svg {
+            cursor: pointer;
+
+            &:not(svg:last-child) {
+                margin-right: 16px;
+            }
+        }
+    }
+
+    &__links { 
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 0px;
+
+        &.links1 {
+            margin-top: 32px;
+            margin-bottom: 0px;
+        }
+        
+        &.links2 {
+            margin-top: 0px;
+            margin-bottom: 32px;
+        }
+
+        a {
+            font-size: 15px;
+            line-height: 26px;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__copyright {
+        margin-top: 24px;
+        margin-bottom: 0px;
+        opacity: 0.5;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 26px;
+        letter-spacing: -0.234375px;
+    }
+
+
+    
+    
+    // More than 1440px
+    @include breakpoint-up(large) {
+        padding: 48px 165px;
+    }
+    
+    // More than 768px
+    @include breakpoint-up(medium) {
+        grid-template-columns: 160px 1fr 110px 110px 1fr 220px;
+        grid-template-rows: 44px 50px;
+        grid-template-areas: 
+            "logo . links1 links2 . cta"
+            "socials . links1 links2 . copyright";
+
+        place-items: baseline;
+
+        &__socials {
+            grid-area: socials;
+            justify-self: start;
+            align-self: end;
+            height: 20px;
+            svg {
+                height: 20px;
+                width: 20px;
+
+                &:not(svg:last-child) {
+                    margin-right: 13px;
+                }
+            }
+        }
+        
+        &__links {
+            justify-self: stretch;
+            text-align: left;
+            grid-area: links2;
+            
+            &.links1 {
+                margin: 0px;
+                grid-area: links1;
+            }
+            
+            &.links2 {
+                margin: 0px;
+                grid-area: links2;
+
+            }
+            
+            // &:first-of-type {
+            // }
+        }
+
+        &__logo {
+            grid-area: logo;
+            justify-self: start;
+            align-self: start;
+        }
+
+        &__cta {
+            justify-self: end;
+            align-self: start;
+            grid-area: cta;
+            max-height: 44px;
+        }
+
+        &__copyright {
+            justify-self: end;
+            align-self: end;
+            grid-area: copyright;
+        }
+    }
+
+}
+
