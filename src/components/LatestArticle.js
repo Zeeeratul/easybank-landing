@@ -7,7 +7,7 @@ import Confetti from '../assets/image-confetti.jpg'
 function LatestArticle() {
 
     return (
-        <div className="latest-article">
+        <section className="latest-article">
             <h2 className="latest-article--headline">Latest Articles</h2>
            
             <div className="latest-article__container">
@@ -47,7 +47,7 @@ function LatestArticle() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

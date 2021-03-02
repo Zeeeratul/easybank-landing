@@ -7,6 +7,11 @@ function Header() {
 
     const handleMenu = () => setOpenMenu(!openMenu)
 
+    const handleClickOverlay = (ev) => {
+        if (ev.target === ev.currentTarget)
+            setOpenMenu(false)
+    }
+
     return (
         <header className={`header ${openMenu ? 'open' : ''}`}> 
             <Logo className="header__logo" />
@@ -27,7 +32,7 @@ function Header() {
                 <span></span>
             </button>
 
-            <div className="header__dropdown hide-for-desktop">
+            <div className="header__dropdown hide-for-desktop" onClick={handleClickOverlay}>
                 <div className="links">
                     <a href="/">Home</a>
                     <a href="/">About</a>

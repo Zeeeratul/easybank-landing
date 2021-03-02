@@ -1,0 +1,90 @@
+.landing {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__image {
+        width: 100%;
+        position: relative;
+        min-height: 280px;
+        background-image: url('../assets/bg-intro-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        
+        &::before {
+            position: absolute;
+            content: "";
+            background-image: url('../assets/image-mockups.png');
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center -170px;
+        }
+    }
+
+    &__text {
+        margin: 40px 24px 88px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        max-width: 330px;
+
+        &--title {
+            color: $dark;
+            font-weight: 300;
+            font-size: 40px;
+            line-height: 47px;
+            letter-spacing: -0.714286px;
+            margin-top: 0px;
+            margin-bottom: 16px;
+        }
+
+        &--subtitle {
+            color: $gray;
+            font-size: 15px;
+            line-height: 25px;
+            letter-spacing: -0.234375px;
+            margin-top: 0px;
+            margin-bottom: 32px;
+        }
+
+        &--cta {
+            width: 163px;
+        }
+    }
+
+    @include breakpoint-up(medium) {
+        margin-top: 88px;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        height: 656px;
+        
+        &__text {
+            margin: 0;
+            margin-left: 165px;
+            text-align: left;
+            align-items: flex-start;
+        }
+
+        &__image {
+            overflow: hidden;
+            align-self: flex-start;
+            height: calc(100% + 126px);
+            max-width: 800px;
+            background-image: url('../assets/bg-intro-desktop.svg');
+            background-position: -70px -245px;
+            background-size: auto;
+
+            &::before {
+                left: 0px;
+                background-size: auto;
+                background-position: 165px -120px;
+            }
+        }
+    }
+}
